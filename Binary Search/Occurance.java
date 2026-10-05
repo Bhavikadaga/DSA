@@ -14,11 +14,8 @@ class Occurance{
        int ans = nums.length;
        while(low <= high){
         int mid = (low+high)/2;
-        if(nums[mid] == k){
+        if(nums[mid] >= k){
             ans = mid;
-            return ans;
-        }
-        else if(nums[mid] > k){
             high = mid-1;
         }else{
             low = mid+1;
@@ -27,8 +24,9 @@ class Occurance{
        return ans;
     }
     public static void main(String[] args) {
-        int[] nums = { 0, 1, 2, 4, 5, 6, 7};
-        int k = 8;
+        // int[] nums = { 0, 1, 2, 4, 5, 6, 7};
+        int[] nums = {1, 3, 5, 6};
+        int k = 2;
         Occurance sol = new Occurance();
         int ans = sol.search(nums, k);
         System.out.println(ans);
